@@ -71,7 +71,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers( "/index.html", "/static/**", "/login", "/login_p", "/favicon.ico")
-                .antMatchers("/**").access("hasRole('ROLE_USER')")
                 // 给 swagger 放行；不需要权限能访问的资源
                 .antMatchers("/swagger-ui.html", "/swagger-resources/**", "/images/**", "/webjars/**", "/v2/api-docs", "/configuration/ui", "/configuration/security");
     }
